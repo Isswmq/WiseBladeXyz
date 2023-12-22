@@ -6,6 +6,7 @@ import org.wiseblade.wisebladexyz.model.User;
 import org.wiseblade.wisebladexyz.service.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -25,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/{email}")
-    public User findByEmail(@PathVariable String email){
+    public Optional<User> findByEmail(@PathVariable String email){
         return service.findByEmail(email);
     }
 

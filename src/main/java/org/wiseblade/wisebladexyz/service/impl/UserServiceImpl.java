@@ -1,13 +1,13 @@
 package org.wiseblade.wisebladexyz.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.wiseblade.wisebladexyz.model.User;
 import org.wiseblade.wisebladexyz.repository.UserRepository;
 import org.wiseblade.wisebladexyz.service.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByEmail(String email) {
+    public Optional<User> findByEmail(String email) {
         return repository.findByEmail(email);
     }
 
